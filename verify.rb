@@ -1,8 +1,3 @@
-check1 = "4820173001"
-check2 = "8201640572814"
-check3 = "870204-1736"
-check4 = "870 204 1736-12 8"
-
 def checking1
     check1_sum = 1*4, 2*8, 3*2, 4*0, 5*1, 6*7, 7*3, 8*0, 9*0
     check1_sum = 4 + 16 + 6 + 0 + 5 + 42 + 21 + 0 + 0
@@ -16,9 +11,8 @@ end
 #checking1
 
 def isbn10
-    isbn = gets.chomp
+    puts "running ISBN10"
     x = 10
-    isbn = isbn.gsub(/[ -]/, '')
     isbn =  isbn.split(//)
     checksum = isbn.pop
     #puts checksum
@@ -36,15 +30,13 @@ end
 #isbn10
 
 def isbn13
-    isbn = gets.chomp
-    x = 10
-    isbn = isbn.gsub(/[ -]/, '')
+    puts "running ISBN13"
     isbn =  isbn.split(//)
     checksum = isbn.pop
     #puts checksum
-    check = (1*isbn[0].to_i) + (2*isbn[1].to_i) + (3*isbn[2].to_i) + (4*isbn[3].to_i) + (5*isbn[4].to_i) + (6*isbn[5].to_i) + (7*isbn[6].to_i) + (8*isbn[7].to_i) + (9*isbn[8].to_i)
+    check = (1*isbn[0].to_i) + (3*isbn[1].to_i) + (1*isbn[2].to_i) + (3*isbn[3].to_i) + (1*isbn[4].to_i) + (3*isbn[5].to_i) + (1*isbn[6].to_i) + (3*isbn[7].to_i) + (1*isbn[8].to_i) + (3*isbn[9].to_i) + (1*isbn[10].to_i) + (3*isbn[11].to_i) + (1*isbn[12].to_i) + (3*isbn[13].to_i)
     #puts check
-    sum = check%11
+    sum = check%10
     #puts sum
     if sum == checksum
         puts "VALID"
@@ -53,3 +45,18 @@ def isbn13
     end
     
 end
+
+def verify
+    puts "Please enter a 10 or 13-digit ISBN number to validate."
+    isbn = "1234567890"
+    isbn = isbn.gsub(/[ -abcdefghijklmnopqrstuvwyz]/, '')
+    puts isbn
+    if isbn.length == 10
+        isbn10
+    elsif isbn.length == 13
+        isbn13
+    else
+        puts "Spongebob"
+    end
+end
+verify
