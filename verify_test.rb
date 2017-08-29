@@ -23,4 +23,10 @@ class TestArray < Minitest::Test
         assert_equal(10, check3.length)
     end
 
+    def test_length_13_2
+        check4 = "870 204 1736-12 8"
+        check4 = check4.gsub(/[ -]/, '')
+        assert_equal(13, check4.length)
+    end
+
 end
