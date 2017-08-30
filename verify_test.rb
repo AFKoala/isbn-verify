@@ -19,14 +19,19 @@ class TestArray < Minitest::Test
 
     def test_length_10_2
         check3 = "870204-1736"
-        check3 = check3.gsub(/-/, '')
+        check3 = check3.gsub!(/-/, '')
         assert_equal(10, check3.length)
     end
 
     def test_length_13_2
         check4 = "870 204 1736-12 8"
-        check4 = check4.gsub(/[ -]/, '')
+        check4 = check4.gsub!(/[ -]/, '')
         assert_equal(13, check4.length)
     end
 
+    def test_more
+        isbn = "83nfo38dn820174"
+        isbnFix = isbn.gsub!(/[ -abcdefghijklmnopqrstuvwyz]/, '')
+        assert_equal(10, isbnFix.length)
+    end
 end
