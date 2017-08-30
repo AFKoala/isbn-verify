@@ -50,13 +50,13 @@ def verify
     puts "Please enter a 10 or 13-digit ISBN number to validate."
     isbn = "1234567890"
     isbn_new = isbn.gsub(/[ -abcdefghijklmnopqrstuvwyz]/, '')
-    puts isbn
+    puts isbn_new
     if isbn_new.length == 10
         isbn10
     elsif isbn_new.length == 13
         isbn13
     else
-        puts "Spongebob"
+        puts "SPONGEBOB SQUAREPANTS"
     end
 end
 verify
