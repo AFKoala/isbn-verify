@@ -1,38 +1,3 @@
-# def isbn_dash(isbn)
-#     puts isbn
-#     x = 10
-#     clean_isbn = isbn.delete('-')
-#     puts clean_isbn
-#     case clean_isbn.length
-#         when 10
-#             then true
-#         when 13
-#             then true
-#     end
-#     unless isbn || (isbn.include?(x) && isbn[9] == x)
-#         false
-#     end
-#     checksum = clean_isbn.pop
-#     puts checksum
-# end
-
-# def isbn_space(isbn)
-#     # puts isbn
-#     clean_isbn = isbn.delete(' ')
-#     # puts clean_isbn
-#     case clean_isbn.length
-#         when 10
-#             then true
-#         when 13
-#             then true
-#     end
-#     unless isbn || (isbn.include?(x) && isbn[9] == x)
-#         false
-#     end
-#     checksum = clean_isbn.pop
-#     puts checksum
-# end
-
 def isbn_both(isbn)
     p isbn
     clean_isbn = isbn.delete(' -')
