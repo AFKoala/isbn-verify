@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'verify.rb'
+require_relative 'verify2.rb'
 
 class TestArray < Minitest::Test
 
@@ -29,9 +29,7 @@ class TestArray < Minitest::Test
         assert_equal(13, check4.length)
     end
 
-    def test_more
-        isbn = "83nfo38dn820174"
-        isbnFix = isbn.gsub!(/[ -abcdefghijklmnopqrstuvwyz]/, '')
-        assert_equal(10, isbnFix.length)
+    def test_because
+        assert_equal('VALID', isbn_both('123-45 67- 89x'))
     end
 end
