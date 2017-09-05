@@ -41,6 +41,7 @@ def clean(isbn)
         when 13
             then true
     end
+    checkSumArray(clean_isbn)
 end
 
 def checkSumArray(clean_isbn)
@@ -53,9 +54,9 @@ def checkSumArray(clean_isbn)
     end
     checksum = checksum.to_i
     if clean_isbn.length == 10
-        math10
+        math10(split_isbn)
     elsif clean_isbn.length == 13
-        math13
+        math13(split_isbn)
     end
 end
 

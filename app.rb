@@ -7,6 +7,5 @@ get '/' do
 end
 
 post '/isbn' do
-    session[:isbnnumber10] = params[:isbnnumber10]
-    session[:isbnnumber13] = params[:isbnnumber13]
+
 end

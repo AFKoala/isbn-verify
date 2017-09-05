@@ -62,5 +62,10 @@
     </script>
 
     <input type='submit' value='Validate!'>
-</form>
 
+    <%if option.value == 10 && option.checked == true%>
+        <%clean(isbnNumber10)%>
+    <%elsif option.value == 13 && option.checked == true%>
+        <%clean(isbnNumber13)%>
+    <%end%>
+</form>
