@@ -1,5 +1,5 @@
 require 'sinatra'
-require_relative 'verify2.rb'
+require_relative 'verify.rb'
 enable :sessions
 
 get '/' do

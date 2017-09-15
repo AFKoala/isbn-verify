@@ -1,71 +1,12 @@
-<p id="this">How long is the ISBN you wish to validate?</p>
-<form method='post' action='/isbn'>
-    <p><input onclick="check()" type='radio' name='option' value='10' id='button'>10 digits</p>
-    <p><input onclick="check()" type='radio' name='option' value='13' id='button2'>13 digits</p>
+<! doctype HTML5>
 
-    <script>
-    function check(){
-        if(document.getElementById('isbn10')){
-            var a = console.log("BUTTON1 CHECK")
-            return a; 
-        }else if(document.getElementById('isbn13')){
-           var a = console.log("BUTTON2 CHECK")
-            return a;
-        }else{
-            document.getElementById('button').addEventListener('click', isbnNum1);
-            document.getElementById('button2').addEventListener('click', isbnNum2);
-        }
-    }
-    
-   /* var arraybox = [1]
+<html lang = 'en'>
 
-    function checkArray(){
-        if(arraybox[0]==1){
-            document.getElementById('button').addEventListener('click', isbnNum);
-            document.getElementById('button2').addEventListener('click', isbnNum);
-            arraybox[0]==2
-            console.log(arraybox);
-           // addInputBoxes();
-        }
-    }
-    function addInputBoxes(){
-        document.getElementById('button').addEventListener('click', isbnNum);
-        arraybox[0] = "2"
-        document.getElementById('button2').addEventListener('click', isbnNum);
-        arraybox[0] = "3"
-    }
-    */
-        //document.getElementById('button').addEventListener('click', isbnNum);
-        //document.getElementById('button2').addEventListener('click', isbnNum);
-
-        function isbnNum1() {
-            document.getElementById('button').innerHTML
-            var input = document.createElement("input");
-            input.type = "text";
-            input.required = true;
-            input.name = "isbnNumber10";
-            input.id = 'isbn10'
-            input.placeholder = "ISBN 10"
-            document.body.appendChild(input);
-        }
-
-        function isbnNum2() {
-            document.getElementById('button2').innerHTML
-            var input = document.createElement("input");
-            input.type = "text";
-            input.required = true;
-            input.name = "isbnNumber13";
-            input.id = 'isbn13'
-            input.placeholder = "ISBN 13"
-            document.body.appendChild(input);
-        }
-    </script>
-
-    <input type='submit' value='Validate!'>
-
-    <%if option.value == 10 && option.checked == true%>
-        <%clean(isbnNumber10)%>
-    <%elsif option.value == 13 && option.checked == true%>
-        <%clean(isbnNumber13)%>
-    <%end%>
-</form>
+<head>
+    <form method = 'post' action = '/verify'>
+        <center><p>Would you like to verify an ISBN?</p></center>
+        <center><p>Please enter a 10 or 13-digit number below.</p></center>
+        <input type = 'text' placeholder = 'ISBN'>
+        <input type = 'submit'>
+    </form>
+</head>

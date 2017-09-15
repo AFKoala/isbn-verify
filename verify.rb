@@ -39,6 +39,8 @@
 
 # isbn10("1234567890")
 
+require 'rubygems'
+require 'aws-sdk'
 require 'csv'
 
 def isbn_function(user_given_isbn)
