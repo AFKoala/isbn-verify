@@ -2,6 +2,8 @@ require 'rubygems'
 require 'aws-sdk'
 require 'csv'
 
+load './local_env.rb' if File.exist?('./local_env.rb')
+
 def isbn_function(user_given_isbn)
     no_space_or_dash_isbn = user_given_isbn.delete(' -')
 
