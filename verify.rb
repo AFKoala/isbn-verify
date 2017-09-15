@@ -162,8 +162,21 @@ def isbn_function(user_given_isbn)
     return_variable
 end
 
+def get_file()
+    s3 = Aws::S3::Client.new
+    csv_file_from_bucket = s3.get_object(bucket: 'minedmindskata', key: 'new.csv')
+    csv_file_read = csv_file_from_bucket.body.read
+
+    split_csv = csv_file_read.split
+    list = []
+    split_csv.each do |item|
+        item.gsub(/"/, '')
+        list << item
+    end
+end
+
 def check_csv
-    write_file = File.open("output_isbn_file.csv", "w")
+    write_file = File.open("output_isbn_file.csv", "a")
 
     CSV.foreach('input_isbn_file.csv') do |row|
         if isbn_function(row[1]) == true
