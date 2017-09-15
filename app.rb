@@ -1,6 +1,5 @@
 require 'sinatra'
 require_relative 'verify.rb'
-heroku buildpacks:set heroku/ruby
 enable :sessions
 
 get '/' do
